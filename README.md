@@ -35,12 +35,13 @@ Examples of full commands include:
 
 ```python3 lnkbomb.py -r randomfilegenerated.recover```
 
-## Executable Usage
-Download Lnkbomb from the releases link on the right side of the page.  All flags are the same as the Python version, with the exception of using lnkbomb.exe rather than python3 lnkbomb.py.
-
 <p align="center">
   <img src="https://github.com/dievus/lnkbomb/blob/main/images/example2.png" />
 </p>
+
+## Executable Usage
+Download Lnkbomb from the releases link on the right side of the page.  All flags are the same as the Python version, with the exception of using lnkbomb.exe rather than python3 lnkbomb.py.
+
 
 ### Notes
 Please keep in mind that this tool is meant for ethical hacking and penetration testing purposes only. I do not condone any behavior that would include testing targets that you do not currently have permission to test against.  
