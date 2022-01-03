@@ -37,7 +37,9 @@ Examples of full commands include:
 
 You will need to utilize a tool like Responder or smbserver to capture the NTLM hash.  
 ```responder -I eth0 -dwf -v```
+
 or
+
 ```smbserver.py . . -smb2support```
 
 
