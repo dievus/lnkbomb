@@ -13,6 +13,8 @@ The payload file is uploaded directly to the insecure file specified by the test
 ## Python Usage
 Installing Lnkbomb
 
+Note that the project works consistently in Windows. It may have issues in Linux.
+
 ```git clone https://github.com/dievus/lnkbomb.git```
 
 Change directories to lnkbomb and run:
