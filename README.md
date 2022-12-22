@@ -3,7 +3,7 @@
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/M4M03Q2JN)
 
 <p align="center">
-  <img src="https://github.com/dievus/lnkbomb/blob/main/images/example.png" />
+  <img src="https://github.com/dievus/lnkbomb/blob/dev/images/example.png" />
 </p>
 
 Lnkbomb is used for uploading malicious shortcut files to insecure file shares.  The vulnerability exists due to Windows looking for an icon file to associate with the shortcut file.  This icon file can be directed to a penetration tester's machine running Responder or smbserver to gather NTLMv1 or NTLMv2 hashes (depending on configuration of the victim host machine).  The tester can then attempt to crack those collected hashes offline with a tool like Hashcat.
