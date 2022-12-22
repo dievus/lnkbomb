@@ -46,7 +46,7 @@ or
 
 
 <p align="center">
-  <img src="https://github.com/dievus/lnkbomb/blob/main/images/example2.png" />
+  <img src="https://github.com/dievus/lnkbomb/blob/dev/images/example2.png" />
 </p>
 
 ## Executable Usage
