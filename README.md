@@ -35,7 +35,7 @@ This will output the help menu, which contains the following flags:
 
 ```-w, --windows - New command - required for setting appropriate ports for Windows shares```
 
-```-l, --linux - New command - required for setting appropriate ports for Linux shares
+```-l, --linux - New command - required for setting appropriate ports for Linux shares```
 
 ```-n, --netbios - New command - netbios name for targeted Windows machines must be included```
 
