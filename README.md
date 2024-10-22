@@ -60,4 +60,6 @@ or
 ### Notes
 Please keep in mind that this tool is meant for ethical hacking and penetration testing purposes only. I do not condone any behavior that would include testing targets that you do not currently have permission to test against.  
 
+This tool may or may not work depending on target patching and versioning. User experience may vary.
+
 I know it's .url shortcuts and not .lnk extensions. I do it to trigger you.
